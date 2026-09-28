@@ -7,7 +7,7 @@ import { ResearchResults } from "@/features/research/components/research-results
 import { useResearch } from "@/hooks/use-research";
 
 export function ResearchPage() {
-  const { data, error, isLoading, steps, currentStepMessage, research } = useResearch();
+  const { data, error, isLoading, research } = useResearch();
 
   return (
     <main className="min-h-screen bg-muted/30 px-4 py-10 sm:px-6">
@@ -30,9 +30,7 @@ export function ResearchPage() {
 
         <ResearchForm error={error} isLoading={isLoading} onSubmit={research} />
 
-        {isLoading && (
-          <ResearchLoading steps={steps} currentStepMessage={currentStepMessage} />
-        )}
+        {isLoading && <ResearchLoading />}
         {data && !isLoading && <ResearchResults result={data} />}
         {!data && !isLoading && !error && (
           <p className="text-center text-sm text-muted-foreground">
@@ -43,3 +41,4 @@ export function ResearchPage() {
     </main>
   );
 }
+

@@ -10,21 +10,3 @@ export type ResearchResponse = {
   sources: Source[];
 };
 
-export type StreamEvent =
-  | {
-      type: "step";
-      step: string;
-      message: string;
-      count?: number;
-      url?: string;
-      status?: string;
-    }
-  | {
-      type: "result";
-      answer: string;
-      sources: Source[];
-    }
-  | {
-      type: "error";
-      message: string;
-    };
