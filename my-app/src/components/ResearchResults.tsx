@@ -1,4 +1,5 @@
 import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { ExternalLink } from "lucide-react";
 
 import {
@@ -27,8 +28,8 @@ export function ResearchResults({ result }: ResearchResultsProps) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="space-y-3 leading-relaxed text-foreground/90 text-sm">
-            <Markdown>{result.answer}</Markdown>
+          <div className="space-y-3 text-sm leading-relaxed text-foreground/90 overflow-x-auto [&_table]:my-3 [&_table]:w-full [&_table]:border-collapse [&_table]:border [&_th]:border [&_th]:bg-muted/70 [&_th]:p-2.5 [&_th]:font-semibold [&_td]:border [&_td]:p-2.5 [&_ul]:my-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:my-2 [&_ol]:list-decimal [&_ol]:pl-5 [&_h2]:mt-4 [&_h2]:mb-1 [&_h2]:text-lg [&_h2]:font-semibold [&_h3]:mt-3 [&_h3]:mb-1 [&_h3]:text-base [&_h3]:font-medium [&_p]:mb-2 [&_p:last-child]:mb-0">
+            <Markdown remarkPlugins={[remarkGfm]}>{result.answer}</Markdown>
           </div>
         </CardContent>
       </Card>
