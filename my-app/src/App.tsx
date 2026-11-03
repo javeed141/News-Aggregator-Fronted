@@ -8,7 +8,8 @@ import { SearchForm } from "@/components/SearchForm";
 import { ResearchResults } from "@/components/ResearchResults";
 import type { ResearchResponse } from "@/types/research";
 
-const API_URL = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000";
+// const API_URL = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000";
+const API_URL = import.meta.env.VITE_API_URL ?? "https://webloader-maq2.onrender.com";
 
 function App() {
   const [query, setQuery] = useState("");
